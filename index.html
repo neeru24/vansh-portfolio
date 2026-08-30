@@ -1,78 +1,199 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vikrant Loi — Film & Media</title>
   <meta name="description" content="Portfolio of Vikrant Loi — filmmaker, videographer, editor and creative media enthusiast.">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+  <!-- NAVIGATION -->
   <header class="nav">
     <a class="logo" href="#home">VL<span>.</span></a>
+
     <nav>
-      <a href="#about">About</a>
       <a href="#work">Work</a>
+      <a href="#reel">Reel</a>
       <a href="#skills">Skills</a>
+      <a href="#software">Software</a>
       <a href="#contact">Contact</a>
     </nav>
+
     <a class="nav-cta" href="#contact">Let's talk ↗</a>
   </header>
 
+
   <main>
+
+    <!-- HERO -->
     <section id="home" class="hero">
       <div class="hero-copy">
         <p class="eyebrow">FILM · VIDEO · CREATIVE MEDIA</p>
-        <h1>Turning ideas<br>into <em>visual stories.</em></h1>
-        <p class="intro">I'm Vikrant — a filmmaker and creative media enthusiast focused on cinematography, editing, color and storytelling.</p>
+
+        <h1>
+          Turning ideas<br>
+          into <em>visual stories.</em>
+        </h1>
+
+        <p class="intro">
+          I'm Vikrant — a filmmaker and creative media enthusiast focused on
+          cinematography, editing, color and storytelling.
+        </p>
+
         <div class="actions">
           <a class="button primary" href="#work">View my work ↗</a>
-          <a class="button ghost" href="#about">More about me</a>
+          <a class="button ghost" href="#reel">Featured reel</a>
         </div>
       </div>
+
       <div class="hero-card">
-        <div class="portrait-placeholder">
-          <span>YOUR<br>PHOTO</span>
+        <img
+          src="src/bannner.jpg.jpeg"
+          alt="Vikrant Loi — Filmmaker"
+          class="hero-image"
+        >
+
+        <div class="floating-note">
+          Based in Germany<br>
+          <strong>Open to creative opportunities</strong>
         </div>
-        <div class="floating-note">Based in Germany<br><strong>Open to creative opportunities</strong></div>
       </div>
     </section>
 
-    <section id="about" class="section about">
-      <div class="section-label">01 / ABOUT</div>
-      <div>
-        <h2>Creative mind.<br><span>Filmmaker at heart.</span></h2>
-        <p class="large">I love creating films and visual content that make people feel something. From shooting footage to editing, music, sound design and color grading, I enjoy being involved in the complete creative process.</p>
-        <p>After years of exploring filmmaking and content creation, I'm now looking to take my practical experience to a professional level and grow within the film and media industry.</p>
-      </div>
-    </section>
 
+    <!-- SELECTED WORK -->
     <section id="work" class="section work">
-      <div class="section-label">02 / SELECTED WORK</div>
+      <div class="section-label">01 / SELECTED WORK</div>
+
       <div class="work-grid">
+
         <article class="project project-large">
-          <div class="project-image gradient-one"><span>01</span></div>
-          <div class="project-info"><h3>Visual Storytelling</h3><p>Film · Cinematography · Editing</p></div>
+          <div class="project-image">
+            <img src="src/filmsection2.jpeg" alt="Behind the Camera">
+            <span>01</span>
+          </div>
+
+          <div class="project-info">
+            <h3>Behind the Camera</h3>
+            <p>Production · Camera Work · Creative Direction</p>
+          </div>
         </article>
+
         <article class="project">
-          <div class="project-image gradient-two"><span>02</span></div>
-          <div class="project-info"><h3>Color & Mood</h3><p>Color grading · Visual direction</p></div>
+          <div class="project-image">
+            <img src="src/filmsection3.jpeg" alt="Achievement">
+            <span>02</span>
+          </div>
+
+          <div class="project-info">
+            <h3>Achievement</h3>
+            <p>Filmmaking · Creative Projects · Recognition</p>
+          </div>
         </article>
-        <article class="project">
-          <div class="project-image gradient-three"><span>03</span></div>
-          <div class="project-info"><h3>Content Creation</h3><p>Video · Social content · Editing</p></div>
-        </article>
+
       </div>
-      <p class="work-note">Replace these project cards with your real films, reels, photos and competition work.</p>
     </section>
 
+
+    <!-- FEATURED REEL -->
+    <section id="reel" class="featured-reel">
+
+      <div class="section-label">02 / FEATURED REEL</div>
+
+      <div class="reel-content">
+
+        <div class="reel-image">
+          <img
+            src="src/featuredreelcover.jpeg"
+            alt="Vikrant Loi — Featured Reel"
+          >
+
+          <div class="reel-overlay"></div>
+
+          <div class="reel-center">
+            <a href="#" class="play-button" aria-label="Play Featured Reel">
+              <span>▶</span>
+            </a>
+            <p>WATCH SHOWREEL</p>
+          </div>
+
+          <div class="reel-number">01 / REEL</div>
+        </div>
+
+        <div class="reel-info">
+          <div>
+            <p class="eyebrow">SELECTED FILM WORK</p>
+
+            <h2>
+              Featured<br>
+              <em>Reel.</em>
+            </h2>
+          </div>
+
+          <p>
+            A collection of my work across cinematography, filmmaking,
+            editing, visual storytelling and creative production.
+          </p>
+
+          <a href="#" class="reel-link">Watch the full reel ↗</a>
+        </div>
+
+      </div>
+
+
+      <!-- ULTIMATE RIVAL -->
+      <div class="reel-secondary">
+
+        <div class="reel-secondary-image">
+          <img
+            src="src/featuredreelcover2.jpeg"
+            alt="Ultimate Rival — Film by Vikrant"
+          >
+
+          <div class="reel-secondary-overlay"></div>
+
+          <div class="reel-secondary-text">
+            <span>02 / FILM</span>
+            <h3>ULTIMATE RIVAL</h3>
+            <p>A FILM BY @Vikrants.frame</p>
+          </div>
+        </div>
+
+        <div class="reel-secondary-info">
+          <p class="eyebrow">FILM PROJECT</p>
+
+          <h3>Ultimate Rival</h3>
+
+          <p>
+            A narrative film project showcasing cinematography,
+            visual composition, editing and storytelling.
+          </p>
+
+          <a href="#" class="reel-link">View project ↗</a>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
     <section id="skills" class="section skills">
       <div class="section-label">03 / SKILLS</div>
+
       <div class="skill-content">
-        <h2>What I bring<br>to a production.</h2>
+        <h2>
+          What I bring<br>
+          to a production.
+        </h2>
+
         <div class="skill-list">
           <div><b>01</b><span>Videography & Camera Work</span></div>
           <div><b>02</b><span>Video Editing</span></div>
@@ -84,28 +205,187 @@
       </div>
     </section>
 
-    <section class="section journey">
-      <div class="section-label">04 / JOURNEY</div>
-      <div>
-        <h2>7+ years of<br><span>making films.</span></h2>
-        <p class="large">Filmmaking has been a long-term passion. I've taken part in filmmaking challenges and creative projects, continuously learning by making, experimenting and telling stories.</p>
-        <div class="achievement"><strong>7 Day Filmmaking Challenge</strong><span>1st Winner · Achievement</span></div>
+
+    <!-- SOFTWARE -->
+    <section id="software" class="section software">
+      <div class="section-label">04 / SOFTWARE</div>
+
+      <div class="software-content">
+
+        <div>
+          <h2>
+            Tools I use<br>
+            <span>to create.</span>
+          </h2>
+
+          <p class="large">
+            A creative workflow built around professional tools for editing,
+            color grading, motion graphics and visual design.
+          </p>
+        </div>
+
+        <div class="software-grid">
+
+          <div class="software-item">
+            <div class="software-logo">
+              <img src="src/logo3.jpeg" alt="DaVinci Resolve">
+            </div>
+            <div class="software-info">
+              <h3>DaVinci Resolve</h3>
+              <p>Color · Editing · Post Production</p>
+            </div>
+          </div>
+
+          <div class="software-item">
+            <div class="software-logo">
+              <img src="src/logo4.jpeg" alt="Adobe Photoshop">
+            </div>
+            <div class="software-info">
+              <h3>Photoshop</h3>
+              <p>Visual Design · Photo Editing</p>
+            </div>
+          </div>
+
+          <div class="software-item">
+            <div class="software-logo">
+              <img src="src/logo1.jpeg" alt="Adobe After Effects">
+            </div>
+            <div class="software-info">
+              <h3>After Effects</h3>
+              <p>Motion Graphics · VFX</p>
+            </div>
+          </div>
+
+          <div class="software-item">
+            <div class="software-logo">
+              <img src="src/logo2.jpeg" alt="Adobe Premiere Pro">
+            </div>
+            <div class="software-info">
+              <h3>Premiere Pro</h3>
+              <p>Video Editing · Storytelling</p>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
 
+    <!-- COLOR GRADING -->
+<section id="color-grading" class="section color-grading">
+  <div class="section-label">05 / COLOR GRADING</div>
+
+  <div class="grading-header">
+    <div>
+      <p class="eyebrow">BEFORE · AFTER · LOOK DEVELOPMENT</p>
+      <h2>Shaping the<br><em>visual mood.</em></h2>
+    </div>
+
+    <p class="grading-description">
+      Color grading is where I shape atmosphere, contrast and emotion —
+      turning raw footage into a cinematic visual language.
+    </p>
+  </div>
+
+  <div class="grading-grid">
+
+    <div class="grading-card">
+      <div class="grading-image">
+        <img src="src/color1.jpeg" alt="Color grading comparison 1">
+        <span class="grading-number">01</span>
+      </div>
+    </div>
+
+    <div class="grading-card">
+      <div class="grading-image">
+        <img src="src/color2.jpeg" alt="Color grading comparison 2">
+        <span class="grading-number">02</span>
+      </div>
+    </div>
+
+    <div class="grading-card">
+      <div class="grading-image">
+        <img src="src/color3.jpeg" alt="Color grading comparison 3">
+        <span class="grading-number">03</span>
+      </div>
+    </div>
+
+    <div class="grading-card">
+      <div class="grading-image">
+        <img src="src/color4.jpeg" alt="Color grading comparison 4">
+        <span class="grading-number">04</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="grading-footer">
+    <span>COLOR · CONTRAST · TONE · ATMOSPHERE</span>
+    <span>DaVinci Resolve</span>
+  </div>
+</section>
+
+
+<section class="section journey" id="journey">
+  <div class="section-label">06 / JOURNEY</div>
+
+  <div class="journey-content">
+    <div class="journey-heading">
+      <h2>7+ years of<br><span>making films.</span></h2>
+
+      <p class="large">
+        Filmmaking has been a long-term passion. I've taken part in
+        filmmaking challenges and creative projects, continuously learning
+        by making, experimenting and telling stories.
+      </p>
+    </div>
+
+    <div class="challenge-card">
+      <div class="challenge-image">
+        <img src="src/challenge.jpeg" alt="7 Day Filmmaking Challenge">
+        <span class="challenge-number">01</span>
+      </div>
+
+      <div class="challenge-info">
+        <div>
+          <h3>7 Day Filmmaking Challenge</h3>
+          <p>Filmmaking · Creative Production · Storytelling</p>
+        </div>
+
+        <strong>1st Winner</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- CONTACT -->
     <section id="contact" class="contact">
       <p class="eyebrow">HAVE A PROJECT OR OPPORTUNITY?</p>
-      <h2>Let's create<br><em>something memorable.</em></h2>
-      <a class="contact-link" href="mailto:your@email.com">your@email.com ↗</a>
+
+      <h2>
+        Let's create<br>
+        <em>something memorable.</em>
+      </h2>
+
+      <a class="contact-link" href="mailto:your@email.com">
+        your@email.com ↗
+      </a>
+
       <div class="socials">
         <a href="#">Instagram</a>
         <a href="#">LinkedIn</a>
         <a href="#">Portfolio / Showreel</a>
       </div>
     </section>
+
   </main>
 
-  <footer><span>© 2026 Vikrant Loi</span><span>Film · Media · Visual Stories</span></footer>
-  <script src="script.js"></script>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© 2026 Vikrant Loi</span>
+    <span>Film · Media · Visual Stories</span>
+  </footer>
+
 </body>
 </html>
