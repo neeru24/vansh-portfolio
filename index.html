@@ -77,12 +77,48 @@
     /* ===== HERO ===== */
     .hero {
       min-height: 100vh;
-      padding: 150px 8vw 90px;
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      align-items: center;
-      gap: 8vw;
+      padding: 180px 8vw 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       border-bottom: 1px solid #222;
+      position: relative;
+      overflow: hidden;
+      background: #0b0b0b;
+    }
+    /* home_banner.jpeg — pushed further right, brighter, soft fade on left */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 75%;
+      height: 100%;
+      background: url('src/home_banner.jpeg') right center/cover no-repeat;
+      opacity: 0.75;
+      filter: brightness(1) contrast(1.02);
+      /* fade only the left edge so it merges into the dark background */
+      mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 25%, black 55%, black 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 25%, black 55%, black 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    /* bottom fade to blend into next section */
+    .hero::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 180px;
+      background: linear-gradient(to top, #0b0b0b 0%, transparent 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .hero > * {
+      position: relative;
+      z-index: 2;
+    }
+    .hero-copy {
+      max-width: 900px;
     }
     .hero h1 {
       font: 700 clamp(54px, 7vw, 105px) / 0.92 'Space Grotesk', sans-serif;
@@ -92,34 +128,10 @@
     .hero h1 em { font-style: normal; color: #9d9a92; }
     .intro { max-width: 550px; color: #aaa69f; font-size: 17px; line-height: 1.6; }
     .actions { display: flex; gap: 12px; margin-top: 35px; flex-wrap: wrap; }
-    .hero-card { position: relative; max-width: 470px; margin: auto; width: 100%; }
-    .hero-image {
-      width: 100%;
-      aspect-ratio: 4/5;
-      object-fit: cover;
-      border: 1px solid #303030;
-      background: #1a1a1a;
-      border-radius: 8px;
-    }
-    .floating-note {
-      position: absolute;
-      right: -20px;
-      bottom: 25px;
-      background: #e9e5dd;
-      color: #111;
-      padding: 16px 20px;
-      font-size: 11px;
-      line-height: 1.7;
-      border-radius: 6px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.6);
-      max-width: 200px;
-      font-weight: 400;
-    }
-    .floating-note strong { font-weight: 600; }
     .achievement-text {
       margin-top: 55px;
       padding: 20px 0 10px;
-      border-top: 1px solid #2a2a2a;
+      border-top: 1px solid rgba(255,255,255,0.08);
       max-width: 800px;
     }
     .achievement-text strong {
@@ -173,6 +185,8 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
     }
     .project-image span {
       position: relative;
@@ -493,9 +507,13 @@
     @media (max-width: 900px) {
       .nav nav { display: none; }
       .nav-cta { display: none; }
-      .hero { grid-template-columns: 1fr; padding-top: 130px; gap: 40px; }
-      .hero-card { width: 75%; margin: 0 auto; }
-      .floating-note { right: -10px; bottom: 10px; padding: 12px 16px; }
+      .hero { padding-top: 140px; }
+      .hero::before {
+        width: 100%;
+        opacity: 0.5;
+        mask-image: linear-gradient(to right, transparent 0%, black 60%, black 100%);
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 60%, black 100%);
+      }
       .section { grid-template-columns: 1fr; gap: 30px; padding: 80px 6vw; }
       .work-grid { grid-template-columns: 1fr; }
       .project-large { grid-row: auto; }
@@ -514,8 +532,11 @@
     }
     @media (max-width: 600px) {
       .hero h1 { font-size: 48px; }
-      .floating-note { position: relative; right: 0; bottom: 0; margin-top: 16px; max-width: 100%; }
-      .hero-card { width: 100%; }
+      .hero::before {
+        opacity: 0.35;
+        mask-image: linear-gradient(to right, transparent 0%, black 75%, black 100%);
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 75%, black 100%);
+      }
     }
   </style>
 </head>
@@ -536,7 +557,7 @@
 
   <main>
 
-    <!-- HERO -->
+    <!-- HERO — full-width horizontal banner merged into background, pushed right -->
     <section id="home" class="hero">
       <div class="hero-copy">
         <p class="eyebrow">FILM · VIDEO · CREATIVE MEDIA</p>
@@ -550,10 +571,6 @@
           <strong>7 Days Mobile Filmmaking Challenge – First Prize Winner</strong>
           <p>I was part of the winning team in a 7-day mobile filmmaking challenge. Responsible for videography and complete post-production including editing, sound and color grading.</p>
         </div>
-      </div>
-      <div class="hero-card">
-        <img src="src/bannner.jpg.jpeg" alt="Vikrant Loi — Filmmaker" class="hero-image">
-        <div class="floating-note">Based in Germany<br><strong>Open to creative opportunities</strong></div>
       </div>
     </section>
 
@@ -589,10 +606,10 @@
       <div class="section-label">02 / FEATURED REEL</div>
       <div class="reel-content">
         <div class="reel-image">
-          <img src="src/featuredreelcover.jpeg" alt="Vikrant Loi — Featured Reel">
+          <img src="src/reel_cover.jpeg" alt="Vikrant Loi — Featured Reel">
           <div class="reel-overlay"></div>
           <div class="reel-center">
-            <a href="#" class="play-button" aria-label="Play Featured Reel"><span>▶</span></a>
+            <a href="https://www.instagram.com/reel/DcjMaIhOLEG/?igsi=MTRqemx3aTI3d3VqcQ==" class="play-button" aria-label="Play Featured Reel" target="_blank" rel="noopener"><span>▶</span></a>
             <p>WATCH SHOWREEL</p>
           </div>
           <div class="reel-number">01 / REEL</div>
@@ -603,7 +620,7 @@
             <h2>Featured<br><em>Reel.</em></h2>
           </div>
           <p>A collection of my work across cinematography, filmmaking, editing, visual storytelling and creative production.</p>
-          <a href="#" class="reel-link">Watch the full reel ↗</a>
+          <a href="https://www.instagram.com/reel/DcjMaIhOLEG/?igsi=MTRqemx3aTI3d3VqcQ==" class="reel-link" target="_blank" rel="noopener">Watch the full reel ↗</a>
         </div>
       </div>
 
@@ -725,7 +742,7 @@
     <section id="contact" class="contact">
       <p class="eyebrow">HAVE A PROJECT OR OPPORTUNITY?</p>
       <h2>Let's create<br><em>something memorable.</em></h2>
-      <a class="contact-link" href="mailto:your@email.com">your@email.com ↗</a>
+      <a class="contact-link" href="mailto:loivikrant1@gmail.com">loivikrant1@gmail.com ↗</a>
       <div class="socials">
         <a href="#">Instagram</a>
         <a href="#">LinkedIn</a>
