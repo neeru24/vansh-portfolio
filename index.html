@@ -32,6 +32,8 @@
     }
     .large { font-size: 24px; line-height: 1.4; max-width: 800px; color: #d6d2ca; }
 
+    .large-p { font-size: 16px; line-height: 1.4; max-width: 800px; color: #d6d2ca; }
+
     /* ===== NAV ===== */
     .nav {
       position: fixed;
@@ -176,14 +178,13 @@
       overflow: hidden;
       position: relative;
     }
-    /* --- object-position adjusted to center 20% (slightly below top) --- */
     .project-image img {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 20%;   /* ← shows slightly below the very top */
+      object-position: center 20%;
       mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
       -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
     }
@@ -294,10 +295,28 @@
     .reel-secondary-info p { color: #aaa69f; max-width: 400px; font-size: 15px; }
 
     /* ===== SKILLS ===== */
+    .skills {
+      position: relative;
+      overflow: hidden;
+    }
+    .skills::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('src/collage.jpeg') center center/cover no-repeat;
+      opacity: 0.45;
+      filter: grayscale(30%) brightness(0.9);
+      mask-image: radial-gradient(ellipse at 30% 50%, black 0%, transparent 75%);
+      -webkit-mask-image: radial-gradient(ellipse at 30% 50%, black 0%, transparent 75%);
+      pointer-events: none;
+      z-index: 0;
+    }
     .skill-content {
       display: grid;
       grid-template-columns: 0.8fr 1.2fr;
       gap: 6vw;
+      position: relative;
+      z-index: 2;
     }
     .skill-list { border-top: 1px solid #333; }
     .skill-list div {
@@ -509,9 +528,10 @@
       .hero { padding-top: 140px; }
       .hero::before {
         width: 100%;
-        opacity: 0.5;
-        mask-image: linear-gradient(to right, transparent 0%, black 60%, black 100%);
-        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 60%, black 100%);
+        opacity: 0.55;
+        background-position: 70% center;
+        mask-image: linear-gradient(to right, transparent 0%, black 50%, black 100%);
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 50%, black 100%);
       }
       .section { grid-template-columns: 1fr; gap: 30px; padding: 80px 6vw; }
       .work-grid { grid-template-columns: 1fr; }
@@ -532,9 +552,10 @@
     @media (max-width: 600px) {
       .hero h1 { font-size: 48px; }
       .hero::before {
-        opacity: 0.35;
-        mask-image: linear-gradient(to right, transparent 0%, black 75%, black 100%);
-        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 75%, black 100%);
+        opacity: 0.4;
+        background-position: 80% center;
+        mask-image: linear-gradient(to right, transparent 0%, black 70%, black 100%);
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 70%, black 100%);
       }
     }
   </style>
@@ -647,7 +668,10 @@
     <section id="skills" class="section skills">
       <div class="section-label">03 / SKILLS</div>
       <div class="skill-content">
-        <h2>What I bring<br>to a production.</h2>
+        <div>
+          <h2>What I bring<br>to a production.</h2>
+          <p class="large-p">A creative workflow built around professional tools for editing, color grading, motion graphics and visual design.</p>
+        </div>
         <div class="skill-list">
           <div><b>01</b><span>Videography & Camera Work</span></div>
           <div><b>02</b><span>Video Editing</span></div>
@@ -666,7 +690,7 @@
         <div class="software-content">
           <div>
             <h2>Tools I use<br><span>to create.</span></h2>
-            <p class="large">A creative workflow built around professional tools for editing, color grading, motion graphics and visual design.</p>
+            <p class="large">Intermediate knowledge of these softwares with a strong passion to take my skills to a professional level and learn more of the industry workflows and tools used in filmmaking.</p>
           </div>
           <div class="software-grid">
             <div class="software-item">
@@ -687,7 +711,6 @@
             </div>
           </div>
         </div>
-        <p>Intermediate knowledge of these softwares with a strong passion to take my skills to a professional level and learn more of the industry workflows and tools used in filmmaking.</p>
       </div>
     </section>
 
@@ -743,9 +766,8 @@
       <h2>Let's create<br><em>something memorable.</em></h2>
       <a class="contact-link" href="mailto:loivikrant1@gmail.com">loivikrant1@gmail.com ↗</a>
       <div class="socials">
-        <a href="#">Instagram</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">Portfolio / Showreel</a>
+        <a href="https://www.instagram.com/vikrants.frame?stkn=MnQ2MTU1YjU1NnA5&utm_source=qr">Instagram</a>
+        <a href="https://vikrantloi-portfolio.vercel.app/">Portfolio / Showreel</a>
       </div>
     </section>
 
